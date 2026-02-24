@@ -16,9 +16,9 @@ An enterprise-grade, Multi-Agent AI system designed to autonomously ingest, proc
 - **Frontend**: React 18, Framer Motion, Axios
 - **Protocols**: SSE (Server-Sent Events) for real-time agent output
 
-## ⚡ Deployment
+## ⚡ Quick Start & Deployment
 
-### 1. Environment configuration
+### 1. Configure the AI API Key
 
 ```bash
 cp .env.example .env
@@ -29,7 +29,7 @@ cp .env.example .env
 
 ```bash
 pip install -r requirements.txt
-uvicorn api.main:app --reload
+uvicorn api.main:app --reload --port 8000
 ```
 
 _(Runs on http://127.0.0.1:8000)_
@@ -43,3 +43,12 @@ npm start
 ```
 
 _(Runs on http://localhost:3000)_
+
+## 🧪 Testing the Website
+
+1. A **sample risky legal contract** named `sample_risky_contract.pdf` has been generated for you in the root folder.
+2. Open your browser to [http://localhost:3000](http://localhost:3000).
+3. Click **Upload Legal Contract** and select `sample_risky_contract.pdf`.
+4. Click **Launch Core Agents** and watch the real-time reasoning and SSE stream tracing in the UI!
+
+> **Troubleshooting**: If you see a `Connection failed` or `System Error` in the UI trace log after uploading, verify that your `.env` contains a valid OpenAI API key and that the Python backend terminal shows no `401 Unauthorized` errors.
